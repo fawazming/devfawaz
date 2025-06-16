@@ -1,5 +1,5 @@
 // Obfuscate your API key
-const API_KEY = 'AIzaSyBzYC473sbzrK4QQG3zcRp_kPl_moqvEdo';
+const API_KEY = 'AIzaSyDYPsGTQS5KnpWWzJLpU2ETxs4KN9UPYeI';
 
 // Function to fetch all posts
 async function fetchPosts(blogId) {
@@ -56,39 +56,35 @@ function displayPPosts(posts) {
 }
 
 // Function to display posts in a list
-// function displayBPosts(posts) {
-//     const postList = document.getElementById('blogwrap');
-//     posts.forEach(post => {
-//         const imgRegex = /<img[^>]*src="([^">]+)"/;
-//         const match = post.content.match(imgRegex);
-//         let firstImageUrl = match ? match[1] : '';
+function displayBPosts(posts) {
+    const postList = document.getElementById('blogwrap');
+    posts.forEach(post => {
+        const imgRegex = /<img[^>]*src="([^">]+)"/;
+        const match = post.content.match(imgRegex);
+        let firstImageUrl = match ? match[1] : '';
 
-//         const listItem = document.createElement('div');
-//         listItem.classList.add('col-xxl-4', 'col-xl-4', 'col-lg-4', 'col-md-4')
-//         listItem.innerHTML = `
-//                     <a class="text-uppercase text-dark" href="blog/?postId=${post.id}">
-//                     <div class="blog-box">
-//                         <div class="blog-images">
-//                             <img src="${firstImageUrl ? firstImageUrl : 'images/blog/13.jpg'}" class="img-fluid rounded" alt="blog image">
-//                         </div>
-//                         <div class="blog-content">
-//                             <h6 class="blog-title mt-4">
-//                                 <a href="blog/?postId=${post.id}">${post.title}</a>
-//                             </h6>
-//                             <div class="read-link mt-4">
-//                                 <a class="text-uppercase text-dark" href="blog/?postId=${post.id}">Read More</a>
-//                             </div>
-//                         </div>
-//                     </div></a>`;
-//         postList.appendChild(listItem);
-//     });
-// }
+        const listItem = document.createElement('div');
+        listItem.classList.add('owl-item')
+        listItem.innerHTML = `
+          <div class="card bg-white border rounded-2xl p-6">
+              <img src="${firstImageUrl ? firstImageUrl : 'images/blog/13.jpg'}" alt="${post.title}">
+              <div class="news-card-details mt-[16px]">
+                  <h5
+                      class="pb-[15px] text-[17px] font-bold border-b border-[#dbdada]"><a href="article/?postId=${post.id}">${post.title}</a></h5>
+                  <div class="pt-[15px] text-sm text-[#ed7d31]">Read More <a href="article/?postId=${post.id}" class="hover:text-[#ed7d31]">
+                          <i class="fa fa-arrow-right"></i></a>
+                  </div>
+              </div>
+          </div>`;
+        postList.appendChild(listItem);
+    });
+}
 
 
 // Main function to handle the logic
 async function main() {
-    const portfolioId = '3754457232408122297';
-    const BlogId = '3642558814134041603';
+    const portfolioId = '4302785772932328853';
+    const BlogId = '884789198213275419';
     const urlParamsP = new URLSearchParams(window.location.search);
     const urlParamsB = new URLSearchParams(window.location.search);
     const singlePortfolioId = urlParamsP.get('singlePortfolioId');
@@ -108,7 +104,7 @@ async function main() {
         displayPost(post);
     } else {
         const posts = await fetchPosts(BlogId);
-        // displayBPosts(posts);
+        displayBPosts(posts);
     }
 
 
@@ -187,5 +183,34 @@ async function main() {
 
     // Close button listener
     closeBtn.addEventListener('click', closeModal);
+
+        /*--------------------- News carousel -------------------------------- */
+    $('.news-carousel').owlCarousel({
+        margin: 24,
+        loop: false,
+        dots: true,
+        nav: true,
+        smartSpeed: 1000,
+        autoplay: true,
+        // items: 2,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            400: {
+                items: 1,
+                nav: true
+            },
+            576: {
+                items: 2,
+                nav: true
+            },
+            768: {
+                items: 2,
+                nav: true
+            },
+        }
+    });
 }
 window.onload = main;

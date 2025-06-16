@@ -91,34 +91,34 @@ $(document).ready(function () {
     var portfolioContent = $('.portfolio-content');
     portfolioContent.mixItUp();
 
-    /*--------------------- News carousel -------------------------------- */
-    $('.news-carousel').owlCarousel({
-        margin: 24,
-        loop: true,
-        dots: false,
-        nav: false,
-        smartSpeed: 1000,
-        autoplay: true,
-        items: 2,
-        responsive: {
-            0: {
-                items: 1,
-                nav: false
-            },
-            400: {
-                items: 1,
-                nav: false
-            },
-            576: {
-                items: 2,
-                nav: false
-            },
-            768: {
-                items: 2,
-                nav: false
-            },
-        }
-    });
+    // /*--------------------- News carousel -------------------------------- */
+    // $('.news-carousel').owlCarousel({
+    //     margin: 24,
+    //     loop: true,
+    //     dots: false,
+    //     nav: false,
+    //     smartSpeed: 1000,
+    //     autoplay: true,
+    //     // items: 2,
+    //     responsive: {
+    //         0: {
+    //             items: 1,
+    //             nav: false
+    //         },
+    //         400: {
+    //             items: 1,
+    //             nav: false
+    //         },
+    //         576: {
+    //             items: 2,
+    //             nav: false
+    //         },
+    //         768: {
+    //             items: 2,
+    //             nav: false
+    //         },
+    //     }
+    // });
 
     /*--------------------- parallaxmouse JS -------------------------------- */
     $(window).parallaxmouse({
