@@ -13,13 +13,13 @@
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, #ea580c, #f97316);
+            background: linear-gradient(90deg, #4f0cea, #6d16f9);
             width: 0%;
             z-index: 50;
             transition: width 0.25s ease;
         }
         [data-active="true"] {
-            color: #f97316;
+            color: #6d16f9;
             font-weight: 700;
         }
         /* Highlight reading paragraph when TTS */
@@ -28,7 +28,7 @@
             transition: background-color 0.3s ease;
         }
         /* Floating navigation small screens */
-        @media (max-width: 640px) {
+        /* @media (min-width: 640px) {
             #side-nav {
                 position: fixed;
                 bottom: 0;
@@ -47,7 +47,7 @@
             #side-nav a {
                 white-space: nowrap;
             }
-        }
+        } */
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans leading-relaxed selection:bg-orange-200 selection:text-orange-900">
@@ -56,10 +56,11 @@
 
     <header class="bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 text-white py-4 px-6 sticky top-0 z-40 shadow-md backdrop-blur-md">
       <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <p class="font-mono text-sm"><a href="../index.html" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">FawazIbraheem</a></p>
         <nav aria-label="Primary navigation" class="flex gap-8 text-lg font-semibold select-none">
-          <a href="#" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">Home</a>
-          <a href="#" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">About Me</a>
-          <a href="#" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">Contact Me</a>
+          <a href="../index.html" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">Home</a>
+          <a href="../index.html" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">About</a>
+          <a href="../index.html" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">Contact</a>
           <a href="#" class="hover:text-orange-300 focus:text-orange-300 focus:outline-none transition">Get Quote</a>
         </nav>
       </div>
@@ -67,10 +68,9 @@
 
     <main class="max-w-5xl mx-auto p-6 md:p-12 grid gap-12 grid-cols-1 md:grid-cols-[1fr_250px]">
 
-      <article id="article-content" class="prose prose-orange max-w-none" style="font-size: 18px;" tabindex="0" aria-label="Blog article content">
-        <h1 class="text-4xl font-extrabold mb-8">
-          Enhancing Your Reading Experience: <br class="hidden md:block" />
-          A Tailwind-CSS Blog Details Page
+      <article id="article-content" class="prose prose-orange w-full" style="font-size: 18px;" tabindex="0" aria-label="Blog article content">
+        <h1 class="text-4xl font-extrabold mb-8" id="blogTitle">
+          
         </h1>
         <nav aria-label="User reading controls" class="flex flex-wrap gap-4 justify-start mb-12">
           <!-- Font size controls -->
@@ -95,59 +95,8 @@
             <span class="material-icons">stop</span>
           </button>
         </nav>
+        <div id="content" class="w-full break-words" style="overflow-wrap: break-word"></div>
 
-        <section class="section" id="section-1" tabindex="-1">
-          <h2>Introduction to Enhanced Reading</h2>
-          <p>
-            Reading online content can be challenging without the right tools and interface. 
-            This blog page presents multiple user-friendly features to ensure that your reading experience is as comfortable and productive as possible.
-          </p>
-          <p>
-            Features like font size adjustment allow you to set the text size that is best for you. Auto text-to-speech functionality can read the article aloud, making it accessible for those who prefer listening over reading.
-          </p>
-          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b452fc2-5611-4847-9e1f-cadaa474a444.png" alt="Cozy reading environment with a glowing lamp and a comfortable chair in modern style" class="rounded-lg shadow-lg my-6" />
-        </section>
-        <section class="section" id="section-2" tabindex="-1">
-          <h2>Dynamic Scroll Progress</h2>
-          <p>
-            As you scroll through the article, a progress bar at the top of the page visually represents your current reading progress. This helps users know how much content remains and stay motivated to continue.
-          </p>
-          <p>
-            The page also scans and dynamically highlights the section you are currently reading, making navigation easier and providing context for your location within the article.
-          </p>
-          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e7aca199-c20a-4801-8665-1750643a4c63.png" alt="Abstract illustration of a scroll progress bar moving upwards in a modern digital interface" class="rounded-lg shadow-lg my-6" />
-        </section>
-        <section class="section" id="section-3" tabindex="-1">
-          <h2>Auto Navigation & Section Highlighting</h2>
-          <p>
-            On larger screens, a side navigation menu lists all article sections. As you scroll, the navigation automatically highlights the current section for reference.
-          </p>
-          <p>
-            This navigation is sticky and provides clickable links to jump between sections quickly. On smaller screens, a floating bottom nav bar provides convenient section navigation with the same highlighting features.
-          </p>
-          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/915954ac-8c71-41a5-b0d3-9d171e04404a.png" alt="Sidebar navigation listing article sections with one highlighted, styled in a modern clean UI" class="rounded-lg shadow-lg my-6" />
-        </section>
-        <section class="section" id="section-4" tabindex="-1">
-          <h2>Text-to-Speech Reader</h2>
-          <p>
-            The integrated text-to-speech reader reads aloud the article content, paragraph by paragraph, providing audio accessibility.
-          </p>
-          <p>
-            You can control playback with play, pause, and stop buttons. As it reads, the currently spoken paragraph is highlighted for visual tracking. This combined visual and audio experience improves comprehension and engagement.
-          </p>
-          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/43e90bf0-b0e7-4d15-93ef-a7e99756f6d6.png" alt="Speaker icon surrounded by sound waves illustrating text to speech technology" class="rounded-lg shadow-lg my-6" />
-        </section>
-        <section class="section" id="section-5" tabindex="-1">
-          <h2>Conclusion & Benefits</h2>
-          <p>
-            These features provide a comprehensive, accessible, and enjoyable reading experience tailored to your preferences.
-            Whether you prefer reading with large fonts, listening via text-to-speech, or navigating swiftly through sections, this blog details page makes it effortless.
-          </p>
-          <p>
-            Enjoy a modern, polished, and interactive article presentation designed with care and usability at its core.
-          </p>
-          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/717a883d-64a9-4944-9e0a-8e5bf31e71a5.png" alt="Closing book with gentle sunlight shining through window to signify article completion" class="rounded-lg shadow-lg my-6" />
-        </section>
       </article>
 
       <!-- Side navigation for desktop/tablet -->
@@ -157,254 +106,10 @@
       </nav>
     </main>
 
+    <script src="../assets/js/rayyantechInner.js"></script>
     <script>
       (() => {
-        const article = document.getElementById('article-content');
-        const sections = [...article.querySelectorAll('.section')];
-        const sideNav = document.getElementById('side-nav');
-        const scrollProgress = document.getElementById('scroll-progress');
 
-        // Generate side nav links dynamically for desktop/tablet
-        function createNavLinks() {
-          sideNav.innerHTML = '<h3 class="text-lg font-semibold text-orange-700 mb-2 select-none">Sections</h3>';
-          sections.forEach((section) => {
-            const link = document.createElement('a');
-            link.href = `#${section.id}`;
-            link.textContent = section.querySelector('h2')?.textContent || 'Section';
-            link.className = 'cursor-pointer hover:text-orange-500 transition';
-            link.setAttribute('data-section-id', section.id);
-            link.addEventListener('click', e => {
-              e.preventDefault();
-              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              // Focus section for accessibility
-              section.focus();
-            });
-            sideNav.appendChild(link);
-          });
-        }
-
-        // Small screen - floating bottom nav bar
-        function createFloatingNav() {
-          // Only create if not exists
-          if(document.getElementById('floating-nav')) return;
-          const floatingNav = document.createElement('nav');
-          floatingNav.id = 'side-nav';
-          // Tailwind classes for mobile floating nav
-          floatingNav.className = 'flex md:hidden fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-95 border-t border-gray-200 shadow-lg rounded-t-xl gap-6 p-3 overflow-x-auto z-40';
-          floatingNav.setAttribute('aria-label', 'Article section navigation');
-          sections.forEach(section => {
-            const link = document.createElement('a');
-            link.href = `#${section.id}`;
-            link.textContent = section.querySelector('h2')?.textContent || 'Section';
-            link.className = 'whitespace-nowrap text-sm text-gray-700 hover:text-orange-500 focus:text-orange-700 focus:outline-none';
-            link.setAttribute('data-section-id', section.id);
-            link.addEventListener('click', e => {
-              e.preventDefault();
-              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              // Focus section for accessibility
-              section.focus();
-            });
-            floatingNav.appendChild(link);
-          });
-          document.body.appendChild(floatingNav);
-        }
-
-        // Update scroll progress bar
-        function updateScrollProgress() {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrolled = (scrollTop / docHeight) * 100;
-          scrollProgress.style.width = `${scrolled}%`;
-        }
-
-        // Highlight active section in nav and handle section heading highlighting
-        function highlightActiveSection() {
-          let fromTop = window.scrollY + window.innerHeight / 5;
-          let currentSection = sections[0];
-
-          for (const section of sections) {
-            if (section.offsetTop <= fromTop) {
-              currentSection = section;
-            }
-          }
-
-          // Highlight links
-          updateNavHighlight(currentSection.id);
-
-          // Focus management not needed here to avoid excessive focus shifts
-        }
-
-        // Updates the nav links to highlight the active section
-        function updateNavHighlight(activeId) {
-          const navLinks = document.querySelectorAll('#side-nav a[data-section-id]');
-          navLinks.forEach(link => {
-            if (link.getAttribute('data-section-id') === activeId) {
-              link.setAttribute('data-active', 'true');
-            } else {
-              link.removeAttribute('data-active');
-            }
-          });
-        }
-
-        // Font size adjustment logic
-        let currentFontSize = 18; // base font size in px
-        const minFontSize = 14;
-        const maxFontSize = 28;
-        const fontStep = 2;
-
-        const articleEl = document.getElementById('article-content');
-        const btnIncrease = document.getElementById('font-increase');
-        const btnDecrease = document.getElementById('font-decrease');
-        const btnReset = document.getElementById('font-reset');
-
-        function updateFontSize(size) {
-          currentFontSize = size;
-          if (currentFontSize < minFontSize) currentFontSize = minFontSize;
-          if (currentFontSize > maxFontSize) currentFontSize = maxFontSize;
-          articleEl.style.fontSize = `${currentFontSize}px`;
-        }
-
-        btnIncrease.addEventListener('click', () => {
-          updateFontSize(currentFontSize + fontStep);
-        });
-
-        btnDecrease.addEventListener('click', () => {
-          updateFontSize(currentFontSize - fontStep);
-        });
-
-        btnReset.addEventListener('click', () => {
-          updateFontSize(18);
-        });
-
-        // Text to Speech (TTS) implementation
-        const ttsPlay = document.getElementById('tts-play');
-        const ttsPause = document.getElementById('tts-pause');
-        const ttsStop = document.getElementById('tts-stop');
-
-        let utterance = null;
-        let speechSynthesis = window.speechSynthesis;
-        let readingIndex = 0;
-        let paragraphs = [];
-
-        function highlightParagraph(idx) {
-          paragraphs.forEach((p, i) => {
-            if (i === idx) {
-              p.classList.add('tts-highlight');
-              // Scroll to keep in view
-              p.scrollIntoView({behavior: 'smooth', block: 'center'});
-            } else {
-              p.classList.remove('tts-highlight');
-            }
-          });
-        }
-        function clearHighlight() {
-          paragraphs.forEach(p => p.classList.remove('tts-highlight'));
-        }
-
-        function speakParagraph(idx) {
-          if (!paragraphs[idx]) {
-            stopTTS();
-            return;
-          }
-          const text = paragraphs[idx].textContent.trim();
-          if (!text) {
-            readingIndex++;
-            speakParagraph(readingIndex);
-            return;
-          }
-          utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'en-US';
-          utterance.rate = 1; // normal speed
-          utterance.onstart = () => {
-            highlightParagraph(idx);
-          };
-          utterance.onend = () => {
-            readingIndex++;
-            if (readingIndex < paragraphs.length) {
-              speakParagraph(readingIndex);
-            } else {
-              stopTTS();
-            }
-          };
-          utterance.onerror = e => {
-            console.error('Speech synthesis error:', e);
-            stopTTS();
-          };
-          speechSynthesis.speak(utterance);
-        }
-
-        function stopTTS() {
-          speechSynthesis.cancel();
-          readingIndex = 0;
-          clearHighlight();
-          ttsPlay.classList.remove('hidden');
-          ttsPause.classList.add('hidden');
-        }
-
-        function pauseTTS() {
-          if (speechSynthesis.speaking && !speechSynthesis.paused) {
-            speechSynthesis.pause();
-            ttsPlay.classList.remove('hidden');
-            ttsPause.classList.add('hidden');
-          }
-        }
-
-        function resumeTTS() {
-          if (speechSynthesis.paused) {
-            speechSynthesis.resume();
-            ttsPlay.classList.add('hidden');
-            ttsPause.classList.remove('hidden');
-          }
-        }
-
-        ttsPlay.addEventListener('click', () => {
-          if (speechSynthesis.paused) {
-            resumeTTS();
-            return;
-          }
-          paragraphs = [...article.querySelectorAll('p')];
-          if(paragraphs.length === 0) return;
-          readingIndex = 0;
-          speakParagraph(readingIndex);
-          ttsPlay.classList.add('hidden');
-          ttsPause.classList.remove('hidden');
-        });
-        ttsPause.addEventListener('click', () => {
-          pauseTTS();
-        });
-
-        ttsStop.addEventListener('click', () => {
-          stopTTS();
-        });
-
-        // Detect touch or narrow screen to toggle nav mode
-        function handleResponsiveNav() {
-          if(window.innerWidth < 768) {
-            sideNav.classList.add('hidden');
-            createFloatingNav();
-          } else {
-            sideNav.classList.remove('hidden');
-            const floating = document.getElementById('side-nav');
-            if(floating && floating !== sideNav) {
-              floating.remove();
-            }
-          }
-        }
-
-        // Initial setup
-        createNavLinks();
-        handleResponsiveNav();
-        updateScrollProgress();
-        highlightActiveSection();
-
-        window.addEventListener('scroll', () => {
-          updateScrollProgress();
-          highlightActiveSection();
-        });
-
-        window.addEventListener('resize', () => {
-          handleResponsiveNav();
-        });
 
       })();
     </script>
